@@ -5,7 +5,7 @@ namespace CityInfo.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class citiesController : ControllerBase
+    public class CitiesController : ControllerBase
     {
         [HttpGet]
         public ActionResult<IEnumerable<CityDto>> GetCities()
