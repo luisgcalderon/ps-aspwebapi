@@ -8,7 +8,8 @@ builder.Services.AddControllers(options =>
 {
     //options.OutputFormatters
     options.ReturnHttpNotAcceptable = true;
-}).AddXmlDataContractSerializerFormatters(); ;
+}).AddNewtonsoftJson()
+.AddXmlDataContractSerializerFormatters(); ;
 //builder.Services.AddProblemDetails(options=>
 //{
 //    options.CustomizeProblemDetails = ctx =>
