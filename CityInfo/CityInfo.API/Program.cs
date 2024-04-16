@@ -12,6 +12,8 @@ builder.Services.AddControllers(options =>
     options.ReturnHttpNotAcceptable = true;
 }).AddNewtonsoftJson()
 .AddXmlDataContractSerializerFormatters(); ;
+
+builder.Services.AddProblemDetails();
 //builder.Services.AddProblemDetails(options=>
 //{
 //    options.CustomizeProblemDetails = ctx =>
@@ -29,6 +31,11 @@ var app = builder.Build();
 
 
 // Configure the HTTP request pipeline.
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler();
+}
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
